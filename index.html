@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>Relógio Numismático</title>
+</head>
+<body>
+
+<style type="text/css">
+html {
+        overflow: hidden;
+}
+</style>
+
+<SCRIPT LANGUAGE="JAVASCRIPT">
+
+
+
+minhaData = new Date();
+var horadeagora = minhaData.getHours();
+var imagemdosminutos = minhaData.getMinutes();
+
+
+
+if (horadeagora > 12) {
+horadeagora = horadeagora - 12;
+}
+
+
+
+document.write("<img src=" + horadeagora + "h.jpg width=480 height=160> <BR> <img src=" + imagemdosminutos + ".jpg width=480 height=160>");
+
+function confere() {
+var agora = new Date();
+var confminuto = agora.getMinutes();
+
+
+
+if (confminuto != imagemdosminutos) {
+location.reload();
+}
+
+}
+
+setInterval(confere,1000);
+
+</script>
+<img id="hora"><BR><img id="minutos">
+
+
+</body>
+</html>
